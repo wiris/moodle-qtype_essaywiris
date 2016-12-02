@@ -43,14 +43,12 @@ class qtype_essaywiris_format_add_cas_renderer {
     public function __construct(plugin_renderer_base $base) {
         $this->base = $base;
     }
-    public function response_area_read_only($name, question_attempt $qa,
-        question_attempt_step $step, $lines, $context) {
+    public function response_area_read_only($name, question_attempt $qa, question_attempt_step $step, $lines, $context) {
         $result = $this->auxiliarcas();
         $result .= $this->base->response_area_read_only($name, $qa, $step, $lines, $context);
         return $result;
     }
-    public function response_area_input($name, question_attempt $qa,
-            question_attempt_step $step, $lines, $context) {
+    public function response_area_input($name, question_attempt $qa, question_attempt_step $step, $lines, $context) {
         $result = $this->auxiliarcas();
         $result .= $this->base->response_area_input($name, $qa, $step, $lines, $context);
         return $result;
@@ -67,13 +65,11 @@ class qtype_essaywiris_format_add_cas_renderer {
  * **/
 class qtype_essaywiris_format_replace_cas_renderer extends plugin_renderer_base {
 
-    public function response_area_read_only($name, question_attempt $qa,
-        question_attempt_step $step, $lines, $context) {
+    public function response_area_read_only($name, question_attempt $qa, question_attempt_step $step, $lines, $context) {
         return $this->response_area_input($name, $qa, $step, $lines, $context);
     }
 
-    public function response_area_input($name, question_attempt $qa,
-            question_attempt_step $step, $lines, $context) {
+    public function response_area_input($name, question_attempt $qa, question_attempt_step $step, $lines, $context) {
         $name = $qa->get_qt_field_name('answer');
         $atts = array(
             'type' => 'hidden',
