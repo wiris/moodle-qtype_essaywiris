@@ -20,7 +20,7 @@ require_once($CFG->dirroot . '/question/type/essay/question.php');
 require_once($CFG->dirroot . '/question/type/essaywiris/renderer.php');
 
 
-class qtype_essaywiris_question extends qtype_wq_question implements question_manually_gradable{
+class qtype_essaywiris_question extends qtype_wq_question implements question_manually_gradable {
 
     // References to moodle's question public properties.
     public $responseformat;
