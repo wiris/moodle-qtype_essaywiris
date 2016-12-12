@@ -55,7 +55,7 @@ class moodle1_qtype_essaywiris_handler extends moodle1_qtype_essay_handler {
     }
 
     public function wrsqz_get_cas_for_computations($data) {
-        
+
         $wrap = com_wiris_system_CallWrapper::getInstance();
 
         $wirisquestion = '';
