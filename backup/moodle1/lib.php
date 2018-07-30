@@ -25,7 +25,7 @@ require_once($CFG->dirroot . '/question/type/wq/lib.php');
 class moodle1_qtype_essaywiris_handler extends moodle1_qtype_essay_handler {
 
     public function get_question_subpaths() {
-        return array('ESSAYWiris', 'ESSAYWiris/WirisOPTIONS');
+        return array('ESSAYWIRIS', 'ESSAYWIRIS/WIRISOPTIONS');
     }
 
 
