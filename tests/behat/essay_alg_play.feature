@@ -1,4 +1,4 @@
-@question @qtype_essaywiris
+@qtype @qtype_essaywiris
 Feature: A student can answer a Wiris Essay question type
   In order to answer the question
   As a student
@@ -23,7 +23,7 @@ Feature: A student can answer a Wiris Essay question type
       | questioncategory | qtype      | name        | template     |
       | Default for C1   | essaywiris | Essay wiris | scienceessay |
 
-  @javascript @_switch_window
+  @javascript
   Scenario: A student executes an essay
     Given the following "activities" exist:
       | activity | name   | intro              | course | idnumber |
@@ -40,5 +40,5 @@ Feature: A student can answer a Wiris Essay question type
     When I type "My answer" in "//div[@contenteditable]"
     And I click on "Finish attempt ..." "button"
     And I click on "Submit all and finish" "button"
-    And I accept the currently displayed dialog
+    And I click on "//input[@type='button']" "xpath_element"
     Then I should see "Not yet graded"
