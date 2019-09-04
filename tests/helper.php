@@ -64,8 +64,25 @@ class qtype_essaywiris_test_helper extends question_test_helper {
         $form->graderinfo = array('text' => '', 'format' => FORMAT_HTML);
         $form->responsetemplate = array('text' => '', 'format' => FORMAT_HTML);
 
-        // Wiris specific information
-        $form->wirisquestion = '<question><wirisCasSession><![CDATA[<wiriscalc version="3.1"><title><math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>Untitled calc</mtext></math></title><properties><property name="lang">en</property></properties><session lang="en" version="2.0"><library closed="false"><mtext style="color:#ffc800" xml:lang="en">variables</mtext><group><command><input><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>=</mo><mo>-</mo><mn>10</mn></math></input></command><command><input><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>b</mi><mo>=</mo><mfrac><mn>15</mn><mn>171</mn></mfrac></math></input></command></group></library></session><constructions><construction group="1">{&quot;elements&quot;:[],&quot;constraints&quot;:[],&quot;displays&quot;:[],&quot;handwriting&quot;:[]}</construction></constructions></wiriscalc>]]></wirisCasSession><options><option name="precision">4</option><option name="times_operator">·</option><option name="implicit_times_operator">false</option><option name="imaginary_unit">i</option></options><localData><data name="cas">false</data><data name="casSession"><![CDATA[<wiriscalc version="3.1"><title><math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>Auxiliary computations and notes</mtext></math></title><properties><property name="lang">en</property><property name="precision">4</property><property name="use_degrees">false</property></properties><session version="3.0" lang="en"><task><title><math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>Sheet 1</mtext></math></title><group><command><input><math xmlns="http://www.w3.org/1998/Math/MathML"/></input></command></group></task></session></wiriscalc>]]></data></localData></question>';
+        // Wiris specific information.
+        $form->wirisquestion = '<question><wirisCasSession><![CDATA[<wiriscalc version="3.1"><title>
+            <math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>Untitled calc</mtext></math></title><properties>
+            <property name="lang">en</property></properties><session lang="en" version="2.0"><library closed="false">
+            <mtext style="color:#ffc800" xml:lang="en">variables</mtext><group><command><input>
+            <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>=</mo><mo>-</mo><mn>10</mn></math></input></command>
+            <command><input><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>b</mi><mo>=</mo><mfrac><mn>15</mn><mn>171</mn>
+            </mfrac></math></input></command></group></library></session><constructions>
+            <construction group="1">{&quot;elements&quot;:[],&quot;constraints&quot;:[],&quot;displays&quot;:[],&quot;handwriting&quot;:[]}</construction>
+            </constructions></wiriscalc>]]>
+            </wirisCasSession><options><option name="precision">4</option><option name="times_operator">·</option>
+            <option name="implicit_times_operator">false</option><option name="imaginary_unit">i</option></options><localData>
+            <data name="cas">false</data><data name="casSession"><![CDATA[<wiriscalc version="3.1"><title>
+            <math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>Auxiliary computations and notes</mtext></math></title>
+            <properties><property name="lang">en</property><property name="precision">4</property>
+            <property name="use_degrees">false</property></properties><session version="3.0" lang="en"><task><title>
+            <math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>Sheet 1</mtext></math></title><group><command><input>
+            <math xmlns="http://www.w3.org/1998/Math/MathML"/></input></command></group></task></session></wiriscalc>]]></data>
+            </localData></question>';
         $form->wirislang = 'en';
         $form->wirisessay = '';
 
