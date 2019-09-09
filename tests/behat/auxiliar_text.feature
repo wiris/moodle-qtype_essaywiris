@@ -24,7 +24,7 @@ Feature: A teacher can add and preview an auxiliar text field in a Science Essay
   @javascript @_switch_window
   Scenario: A teacher adds an auxiliar text field to a science essay
     When I log in as "teacher1"
-    And I click on "Course 1" "link"
+    And I click on "C1" "link"
     And I click on "Quiz 1" "link"
     And I click on "Edit quiz" "button"
     And I click on "Add" "link"
@@ -43,5 +43,3 @@ Feature: A teacher can add and preview an auxiliar text field in a Science Essay
     And I click on "Preview question" "link"
     And I switch to "questionpreview" window
     Then I should see "Write an optional reasoning for your answer:"
-
-
