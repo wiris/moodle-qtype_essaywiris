@@ -1,4 +1,4 @@
-@qtype @qtype_essaywiris @eeeee
+@qtype @qtype_essaywiris
 Feature: A teacher can add and preview an auxiliar text field in a Science Essay question
   In order to allow their students to comment on their answers
   As a teacher
