@@ -60,7 +60,7 @@ before_install:
 install:
   - moodle-plugin-ci add-plugin wiris/moodle-atto_wiris
   - moodle-plugin-ci add-plugin --branch master wiris/moodle-filter_wiris
-  - moodle-plugin-ci add-plugin --branch QUIZINT-599 wiris/moodle-qtype_wq
+  - moodle-plugin-ci add-plugin wiris/moodle-qtype_wq
   - moodle-plugin-ci install
 
 script:
