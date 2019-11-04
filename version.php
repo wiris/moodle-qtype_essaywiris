@@ -17,7 +17,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->version = 2019103000;
-$plugin->release = '3.77.1';
+$plugin->release = '3.77.2';
 $plugin->requires = 2011060313;
 $plugin->maturity = MATURITY_STABLE;
 $plugin->component = 'qtype_essaywiris';
