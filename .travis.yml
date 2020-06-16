@@ -58,6 +58,8 @@ before_install:
   - export PATH="$(cd ci/bin; pwd):$(cd ci/vendor/bin; pwd):$PATH"
 
 install:
+  - nvm install 14.0.0
+  - nvm use 14.0.0
   - moodle-plugin-ci add-plugin wiris/moodle-atto_wiris
   - moodle-plugin-ci add-plugin --branch master wiris/moodle-filter_wiris
   - moodle-plugin-ci add-plugin wiris/moodle-qtype_wq

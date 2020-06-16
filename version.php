@@ -22,5 +22,5 @@ $plugin->requires = 2011060313;
 $plugin->maturity = MATURITY_STABLE;
 $plugin->component = 'qtype_essaywiris';
 $plugin->dependencies = array (
-     'qtype_wq' => 2020011300
+     'qtype_wq' => 2020061600
 );
