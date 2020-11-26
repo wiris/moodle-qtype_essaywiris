@@ -48,10 +48,15 @@ class qtype_essaywiris_question extends qtype_wq_question implements question_ma
     }
 
     private function is_cas_replace_input() {
+        $wrap = com_wiris_system_CallWrapper::getInstance();
+        $wrap->start();
+
         //@codingStandardsIgnoreStart
         $keyshowcas = $this->wirisquestion->question->getProperty(com_wiris_quizzes_api_QuizzesConstants::$PROPERTY_SHOW_CAS);
         $valueshowcasreplaceinput = com_wiris_quizzes_api_QuizzesConstants::$PROPERTY_VALUE_SHOW_CAS_REPLACE;
         //@codingStandardsIgnoreEnd
+
+        $wrap->stop();
         $replace = ($keyshowcas == $valueshowcasreplaceinput);
         return $replace;
     }
