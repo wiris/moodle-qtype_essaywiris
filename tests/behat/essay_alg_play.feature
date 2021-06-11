@@ -1,4 +1,4 @@
-@qtype @qtype_essaywiris
+@qtype @qtype_essaywiris @qtype_essaywiris_alg_play
 Feature: A student can answer a Wiris Essay question type
   In order to answer the question
   As a student
