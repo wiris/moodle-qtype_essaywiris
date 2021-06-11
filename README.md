@@ -1,6 +1,6 @@
 # Wiris Quizzes Essay question type
 ### Master Build Status
-[![Build Status](https://travis-ci.com/wiris/moodle-qtype_essaywiris.svg)](https://travis-ci.com/wiris/moodle-qtype_essaywiris)
+[![Moodle Plugin CI](https://github.com/wiris/moodle-qtype_essaywiris/actions/workflows/ci.yml/badge.svg)](https://github.com/wiris/moodle-qtype_essaywiris/actions/workflows/ci.yml)
 
 The Wiris Essay question type extends the Moodle Essay type, adding mathematical functionality to it.
 
