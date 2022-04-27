@@ -22,6 +22,12 @@ require_once($CFG->dirroot . '/question/type/essaywiris/renderer.php');
 
 class qtype_essaywiris_question extends qtype_wq_question implements question_manually_gradable {
 
+
+    const LOCALDATA_NAME_SHOW_CAS = "cas";
+    const LOCALDATA_VALUE_SHOW_CAS_REPLACE = "replace";
+    
+    const LOCALDATA_NAME_CAS_SESSION = "casSession";
+
     // References to moodle's question public properties.
     public $responseformat;
     public $responsefieldlines;
@@ -50,30 +56,14 @@ class qtype_essaywiris_question extends qtype_wq_question implements question_ma
     }
 
     private function is_cas_replace_input() {
-        //@codingStandardsIgnoreStart
-        $wrap = com_wiris_system_CallWrapper::getInstance();
-        $wrap->start();
-        $slots = $this->wirisquestion->question->getSlots();
-        if (isset($slots[0])) {
-            $keyshowcas = $slots[0]->getProperty(com_wiris_quizzes_api_PropertyName::$SHOW_CAS); // @codingStandardsIgnoreLine
-        } else {
-            $keyshowcas = $this->wirisquestion->question->getProperty(com_wiris_quizzes_api_PropertyName::$SHOW_CAS); // @codingStandardsIgnoreLine
-        }
-        $wrap->stop();
-        $valueshowcasreplaceinput = com_wiris_quizzes_api_QuizzesConstants::$PROPERTY_VALUE_SHOW_CAS_REPLACE;
-        //@codingStandardsIgnoreEnd
-
-        $replace = ($keyshowcas == $valueshowcasreplaceinput);
-        return $replace;
+        $showcas = $this->get_local_data_from_question(self::LOCALDATA_NAME_SHOW_CAS);
+        return $keyshowcas == self::LOCALDATA_VALUE_SHOW_CAS_REPLACE;
     }
 
     public function is_complete_response(array $response) {
         $complete = parent::is_complete_response($response);
         if (!$complete && $this->is_cas_replace_input() && isset($response['_sqi'])) {
-            $builder = com_wiris_quizzes_api_Quizzes::getInstance();
-            $sqi = $builder->readQuestionInstance($response['_sqi'], $this->wirisquestion);
-            //@codingStandardsIgnoreLine
-            $studentcas = $sqi->instance->getLocalData(com_wiris_quizzes_api_QuizzesConstants::$PROPERTY_CAS_SESSION);
+            $studentcas = $this->get_local_data_impl($response['_sqi'], self::LOCALDATA_NAME_CAS_SESSION);
             // Note that the $studentcas is null if the student does not update
             // the CAS value even if the CAS has an initial session.
             $complete = !empty($studentcas);
