@@ -46,4 +46,4 @@ Feature: A teacher can add and preview an auxiliar text field in a Science Essay
     And I click on "Preview question" "link"
     And I switch to "questionpreview" window
     Then I should see "Write an optional reasoning for your answer:"
-    And I wait "20" seconds
+    And I wait "3" seconds
