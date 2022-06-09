@@ -1,4 +1,4 @@
-@qtype @qtype_essaywiris @qtype_essaywiris_add @qtype_auxiliary_text
+@qtype @qtype_wq @qtype_essaywiris
 Feature: A teacher can add and preview an auxiliar text field in a Science Essay question
   In order to allow their students to comment on their answers
   As a teacher
@@ -21,8 +21,7 @@ Feature: A teacher can add and preview an auxiliar text field in a Science Essay
   Scenario: A teacher adds an auxiliary text field to a science essay
     When I am on the "Course 1" "core_question > course question bank" page logged in as teacher
     And I press "Create a new question ..."
-    And I click on "Essay - science" "radio"
-    And I click on "//input[@name='submitbutton']" "xpath_element"
+    And I choose the question type "Essay - science"
     And I set the following fields to these values:
     | Question name | Science essay                                         |
     | Question text | What are the steps to solve a second degree equation? |

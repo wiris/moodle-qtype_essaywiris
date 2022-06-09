@@ -1,4 +1,4 @@
-@qtype @qtype_essaywiris
+@qtype @qtype_wq @qtype_essaywiris
 Feature: A student can answer a Wiris Essay question type
   In order to answer the question
   As a student
