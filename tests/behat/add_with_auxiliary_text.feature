@@ -1,36 +1,26 @@
-@qtype @qtype_essaywiris @qtype_essaywiris_auxiliar_text
+@qtype @qtype_essaywiris @qtype_essaywiris_add @qtype_auxiliary_text
 Feature: A teacher can add and preview an auxiliar text field in a Science Essay question
   In order to allow their students to comment on their answers
   As a teacher
-  I need to be able to add an auxiliar text field
+  I need to be able to add an auxiliary text field
 
   Background:
     Given the "wiris" filter is "on"
     Given the "mathjaxloader" filter is "disabled"
     Given the following "users" exist:
-      | username | firstname | lastname | email                |
-      | teacher1 | Teacher   | 1        | teacher1@example.com |
+      | username |
+      | teacher  |
     And the following "courses" exist:
       | fullname | shortname | format |
       | Course 1 | C1        | weeks  |
     And the following "course enrolments" exist:
-      | user     | course | role           |
-      | teacher1 | C1     | editingteacher |
-    And the following "question categories" exist:
-      | contextlevel | reference | name           |
-      | Course       | C1        | Default for C1 |
-    And the following "activities" exist:
-      | activity | name   | intro              | course | idnumber |
-      | quiz     | Quiz 1 | Quiz 1 description | C1     | quiz1    |
+      | user    | course | role           |
+      | teacher | C1     | editingteacher |
 
   @javascript @_switch_window
-  Scenario: A teacher adds an auxiliar text field to a science essay
-    When I log in as "teacher1"
-    And I click on "C1" "link"
-    And I click on "Quiz 1" "link"
-    And I click on "Edit quiz" "button"
-    And I click on "Add" "link"
-    And I click on "a new question" "link"
+  Scenario: A teacher adds an auxiliary text field to a science essay
+    When I am on the "Course 1" "core_question > course question bank" page logged in as teacher
+    And I press "Create a new question ..."
     And I click on "Essay - science" "radio"
     And I click on "//input[@name='submitbutton']" "xpath_element"
     And I set the following fields to these values:
@@ -42,8 +32,7 @@ Feature: A teacher can add and preview an auxiliar text field in a Science Essay
     And I click on "Display auxiliary text field" "text"
     And I go back in Wiris Quizzes Studio
     And I save Wiris Quizzes Studio
-    And I click on "//input[@name='submitbutton']" "xpath_element"
-    And I click on "Preview question" "link"
-    And I switch to "questionpreview" window
+    And I press "id_submitbutton"
+    And I am on the "Science essay" "core_question > preview" page
     Then I should see "Write an optional reasoning for your answer:"
     And I wait "3" seconds
