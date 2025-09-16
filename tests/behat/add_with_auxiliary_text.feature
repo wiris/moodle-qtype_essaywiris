@@ -35,3 +35,4 @@ Feature: A teacher can add and preview an auxiliar text field in a Science Essay
     And I am on the "Science essay" "core_question > preview" page
     Then I should see "Write an optional reasoning for your answer:"
     And I wait "3" seconds
+
