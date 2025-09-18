@@ -1,4 +1,4 @@
-@mod @mod_quiz @qtype_essaywiris @javascript @studentwiris
+@mod @mod_quiz @qtype_essaywiris @javascript @studentwiris @wqmdl-270
 Feature: Student answers a quiz with an Essay (WIRIS) question
 
     Background:
