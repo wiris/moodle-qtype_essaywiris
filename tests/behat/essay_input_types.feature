@@ -1,4 +1,4 @@
-@qtype_essaywiris @wq @javascript @student @attempt @inputoptions @regression
+@qtype @qtype_essaywiris @wq @javascript @student @attempt @inputoptions @regression
 Feature: Essay (WIRIS) response-format input options
     In order to trust every Essay (WIRIS) response-format option
     As a student

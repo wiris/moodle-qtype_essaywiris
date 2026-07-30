@@ -1,4 +1,4 @@
-@qtype_essaywiris @wq @javascript @student @attempt @regression
+@qtype @qtype_essaywiris @wq @javascript @student @attempt @regression
 Feature: Student answers a quiz with an Essay (WIRIS) question
 
     Background:
