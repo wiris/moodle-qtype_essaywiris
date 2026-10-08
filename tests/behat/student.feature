@@ -33,7 +33,7 @@ Feature: Student answers a quiz with an Essay (WIRIS) question
     Scenario: Student attempts and submits the Essay (WIRIS) quiz
     Given I am on the "WIRIS Essay Quiz" "mod_quiz > View" page logged in as "student1"
     When I press "Attempt quiz"
-    Then TinyMCE should be initialized on the first quiz attempt load
+    Then the TinyMCE editor for "Answer" should be initialized
     And I set the field "Answer" to "Here is my essay with a formula: F = G·m1·m2/r^2."
     And I click on "Finish attempt ..." "link"
     And I press "Submit all and finish"

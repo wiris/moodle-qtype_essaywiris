@@ -44,6 +44,7 @@ Feature: Essay (WIRIS) response-format input options
             | Essay editor | 1    |
         When I am on the "Essay Editor Quiz" "mod_quiz > View" page logged in as "student1"
         And I press "Attempt quiz"
+        Then the TinyMCE editor for "Answer" should be initialized
         And I set the field "Answer" to "Gravity pulls objects down towards the Earth."
         And I click on "Finish attempt ..." "link"
         And I press "Submit all and finish"
@@ -99,6 +100,7 @@ Feature: Essay (WIRIS) response-format input options
             | Essay attachments | 1    |
         When I am on the "Essay Attachments Quiz" "mod_quiz > View" page logged in as "student1"
         And I press "Attempt quiz"
+        Then the TinyMCE editor for "Answer" should be initialized
         # With attachments enabled the attempt shows the core file-upload area.
         Then I should see "Attach your working."
         And I should see "You can drag and drop files here to add them."
